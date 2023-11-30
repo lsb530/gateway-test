@@ -1,0 +1,18 @@
+server:
+  port: 9999
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: first-service
+          uri: http://localhost:9091/
+          predicates:
+            - Path=/first-service/**
+        - id: second-service
+          uri: http://localhost:9092/
+          predicates:
+            - Path=/second-service/**
+          filters:
+            - AddRequestHeader=second-request, second-request-header
+            - AddResponseHeader=second-response, second-response-header
