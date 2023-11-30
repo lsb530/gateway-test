@@ -16,3 +16,9 @@ spring:
           filters:
             - AddRequestHeader=second-request, second-request-header
             - AddResponseHeader=second-response, second-response-header
+      default-filters:
+        - name: GlobalFilter
+          args:
+            baseMessage: Spring Cloud Gateway GlobalFilter
+            preLogger: true
+            postLogger: true
