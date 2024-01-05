@@ -1,2 +1,26 @@
 server:
   port: 5555
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOriginPatterns:
+              - "*"
+            allowedMethods:
+              - "GET"
+              - "POST"
+              - "PUT"
+              - "DELETE"
+              - "PATCH"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+            maxAge: 3600
+
+boki:
+  gateway:
+    api:
+      baseURL: "http://localhost:9091"
+      apiKey: "boki"
