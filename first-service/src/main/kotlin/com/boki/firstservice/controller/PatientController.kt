@@ -17,8 +17,12 @@ class PatientController {
 
     @GetMapping
     fun patients(@RequestHeader headers: Map<String, String>): Any? {
-        println(headers)
-        return String.format("GET API patients on PORT %s", port)
+        println("headers")
+        for ((k, v) in headers) {
+            println("key: $k, value: $v")
+        }
+        println("port: $port")
+        return String.format("get patients")
     }
 
     @GetMapping("/{id}")
@@ -26,9 +30,12 @@ class PatientController {
         @RequestHeader headers: Map<String, String>,
         @PathVariable id: Any,
     ): Any? {
-        println(headers)
-        println(id)
-        return String.format("GET API patients on PORT %s", port)
+        println("headers")
+        for ((k, v) in headers) {
+            println("key: $k, value: $v")
+        }
+        println("port: $port")
+        println("id: $id")
+        return String.format("get patients/:%s", id.toString())
     }
-
 }
