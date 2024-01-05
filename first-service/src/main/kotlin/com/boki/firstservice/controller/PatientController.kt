@@ -36,6 +36,6 @@ class PatientController {
         }
         println("port: $port")
         println("id: $id")
-        return String.format("get patients/:%s", id.toString())
+        return String.format("get patients/%s", id.toString())
     }
 }
