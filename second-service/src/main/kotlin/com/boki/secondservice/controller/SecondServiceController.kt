@@ -14,7 +14,7 @@ class SecondServiceController {
 
     @GetMapping("/check")
     fun check(): String? {
-        return String.format("First Service on PORT %s", port)
+        return String.format("Second Service on PORT %s", port)
     }
 
 }

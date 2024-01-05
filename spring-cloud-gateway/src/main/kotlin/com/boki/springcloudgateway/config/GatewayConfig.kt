@@ -21,7 +21,7 @@ class GatewayConfig {
                 it.header("FE-APP-NAME", "react")
                     .and()
                     .path("/**")
-                    .uri("http://localhost:9092")
+                    .uri("http://localhost:9095")
             }
             // 여기에 다른 라우트를 추가할 수 있습니다.
             .build()
